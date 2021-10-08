@@ -1,0 +1,11 @@
+---
+- name: Playbook to create a user
+  hosts: prod
+  become: yes
+  vars_files:
+    - user_list.yml
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ item }}"
+      loop: "{{ developer }}"
