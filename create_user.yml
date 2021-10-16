@@ -1,11 +1,12 @@
 ---
 - name: Playbook to create a user
-  hosts: prod
+  hosts: ans01
   become: yes
   vars_files:
-    - user_list.yml
+    - users_list.yml
   tasks:
     - name: Create user
       user:
-        name: "{{ item }}"
-      loop: "{{ developer }}"
+        name: "{{ item.name }}"
+        state: present
+      loop: "{{ users }}"
