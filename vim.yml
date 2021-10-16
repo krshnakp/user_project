@@ -1,6 +1,6 @@
 ---
 - name: Playbook to create a user
-  hosts: localhost
+  hosts: ans01
   become: yes
   tasks:
     - name: Install vim
