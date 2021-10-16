@@ -1,0 +1,9 @@
+---
+- name: Playbook to create a user
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install vim
+      yum:
+        name: vim
+        state: present
